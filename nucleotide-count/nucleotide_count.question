@@ -1,0 +1,55 @@
+//I could do with some help here. When I run the below I always get an errors of the type:
+//./cases_test.go:22:26: cannot use 'A' (type untyped rune) as type string in map key
+
+//I do not understand why. I created the following test program which works fine:
+//package main
+//
+//import "fmt"
+//
+//type Histogram map[string]int
+//
+//func main() {
+//        h := Histogram{"G": 0,"C": 0}
+//        fmt.Println(h)
+//}
+
+//Please can you explain why this is not correctly setting the histogram values
+//Thanks
+//
+
+// Package dna - work outthe frquency count of nucleotides in a DNS strand
+package dna
+
+import (
+	//"strings"
+	//"errors"
+	"fmt"
+)
+
+type Histogram map[string]int
+// DNA is a list of nucleotides. Choose a suitable data type.
+type DNA string
+
+// Counts generates a histogram of valid nucleotides in the given DNA.
+// Returns an error if d contains an invalid nucleotide.
+///
+// Counts is a method on the DNA type. A method is a function with a special receiver argument.
+// The receiver appears in its own argument list between the func keyword and the method name.
+// Here, the Counts method has a receiver of type DNA named d.
+
+func (d DNA) Counts() (Histogram, error) {
+	fmt.Println("here")
+	h := Histogram{"G": 0,"C": 0,"T": 0,"A": 0}
+	fmt.Println(d)
+	fmt.Println(h)
+	var err error
+        //rna := strings.Split(d, "")
+	//for index, nucleotide := range d {
+		//if ! h[nucleotide] {
+		//return err = errors.New("invalid nucleotide")
+		//}
+		//h[nucleotide] = h[nucleotide] +1
+	//	fmt.Println(index,nucleotide)
+	//}
+	return h, err
+}
